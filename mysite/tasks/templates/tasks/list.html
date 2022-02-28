@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/styleList.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+</head>
+<body>
+    <header>
+        <img src="{% static 'img/8282c4e03298e3516a9939af043fe202-configuracoes-da-lista-de-configuracoes-do-icone-do-traco.png' %}" width="120" alt="">
+        <nav>
+            <ul class="nav_links">
+                <li><a href="{% url 'index' %} ">Inicio</a></li>
+                <li><a href="#">Cards</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="nav_links" id="inscre"><li>Está com dúvida?</li></a>
+    </header>
+
+    <main>
+        <div class="offset-1 list-div">
+            <h1>Lista de tarefas</h1>
+            <div id="class">
+                <a href="newtask/">
+                    <div class="col-10 add-div">
+                        <i class="fas fa-plus"></i> Adicionar tarefa
+                    </div>
+                </a>
+                <div class="col-9 search-div">
+                    <input class="form-control" type="text" id="search" placeholder="Digite o nome da tarefa para buscar">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+         
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %} 
+                        <li {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+    
+            <ul class="task-list">
+                {% for task in lista %}
+                <li class="task-item">
+                    <span><a href="/task/{{task.id}}">{{task.title}}</a></span>
+                    <a href="delete/{{task.id}}"><span><i class="fas fa-trash"></i></span></a>
+                    <a href="edit/{{task.id}}"><span><i class="fas fa-edit"></i></span></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

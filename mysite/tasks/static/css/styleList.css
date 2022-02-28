@@ -1,0 +1,171 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+
+}
+
+body {
+    background-color: rgb(34,34,34);
+    color: white;
+    font-family: poppinsregular;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+li, a, buton {
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+   
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+img {
+    cursor: pointer;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+
+.nav_links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+    color: #007bff;
+    border-bottom: 1px solid #007bff;
+}
+
+#inscre {
+    border: 2px solid #007bff;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#inscre:hover {
+    background-color: #007bff;
+    color: white;
+    transition: 2s;
+}
+
+
+main {
+    margin-top: 50px;
+}
+
+header {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    
+}
+
+/* main */
+.list-div {
+    padding: 0;
+}
+
+.task-item {
+    list-style: none;
+    font-size: 20px;
+    height: 50px;
+    padding-top: 10px;
+    border-bottom: 1px solid;
+    width: 973px;
+ 
+    
+}
+
+.add-div {
+    background-color: #007bff;
+    cursor: pointer;
+    display: flex;
+    color: white;
+    padding: 8px;
+    width: 200px;
+    border-radius: 5px;
+    margin-right: 25px;
+    align-items: center;
+}
+
+.fas.fa-plus {
+    color: rgb(255, 255, 255);
+    margin-right: 5px;
+    margin-left: 5px;
+
+}
+
+.fas.fa-search {
+    position: absolute;
+    top: 12px;
+    right: 80px;
+}
+
+.search-div {
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: black;
+    cursor: pointer;
+
+}
+
+.fas.fa-trash, .fas.fa-edit {
+    cursor: pointer;
+    margin: 5px;
+    font-size: 20px;
+    float: right;
+}
+
+.fas.fas.fa-trash {
+    color: rgb(155, 32, 32);
+}
+
+.fas.fa-edit {
+    color: #007708;
+}
+
+
+.form-control {
+    width: 740px;
+}
+
+
+ul.messages {
+    margin-top: 10px;
+    padding: 0;
+    width: 400px;
+    
+}
+
+ul.messages li {
+    list-style: none;
+    text-align: center;
+}
+
+
+#class {
+    display: flex;
+    align-items: center;
+
+}
